@@ -108,5 +108,56 @@ C언어에서의 \n과 같이<br>
 이미지는 HTML 파일이 있는 경로 아래 media 폴더를 만들고 그 곳에 두면 된다.<br>
 <img src="C:\Users\ADMIN\Documents\GitHub\Web_Study\media\IMG_Tag.png" alt="<IMG>">
 
+<hr>
+
+<h3>리스트 만들기</h3>
+리스트의 종류 3가지
+<dl>
+  <dt><strong title="ordered list">&lt;OL&gt;</strong>
+    <dd><ol>
+      <li>순서</li>
+      <li>있는</li>
+      <li>리스트</li>
+    </ol>
+  <dt><strong title="unordered list">&lt;UL&gt;</strong>
+    <dd><ul>
+      <li>순서</li>
+      <li>없는</li>
+      <li>리스트</li>
+    </ul>
+    <!--"</li>"태그는 생략 가능-->
+  <dt><strong title="definition list">&lt;DL&gt;</strong>
+    <dd><dl>
+        <dt><strong>정의 리스트</strong>
+          <dd>용어와 설명을 하나의 아이템으로 처리
+        </dl>
+</dl>
+
+<hr>
+
+<h3>&lt;TABLE&gt;로 표 만들기</h3>
+
+<table border="1">
+	<caption>표 만드는데 사용되는 태그들</caption>
+	<thead>
+		<tr><th>태그</th><th>설명</th><th></th></tr>
+	</thead>
+	<tfoot>
+		<tr><th colspan="3">colspan 속성을 사용해 가로셀을 합병할 수 있다.</th></tr>
+	</tfoot>
+	<tbody>
+		<tr><td>&lt;table&gt;</td><td>표 전체를 담는 컨테이너</td><th rowspan="8">rowspan<br>사용해<br>세로셀을<br>합병</th></tr>
+		<tr><td>&lt;caption&gt;</td><td>표 제목</td></tr>
+    <tr><td>&lt;thead&gt;</td><td>헤딩 셀 그룹</td></tr>
+    <tr><td>&lt;tfoot&gt;</td><td>바닥 셀 그룹</td></tr>
+    <tr><td>&lt;tbody&gt;</td><td>데이터 셀 그룹</td></tr>
+    <tr><td>&lt;tr&gt;</td><td>행. 여러 &lt;td&gt;, &lt;th&gt;포함</td></tr>
+    <tr><td>&lt;th&gt;</td><td>열 제목(헤딩) 셀</td></tr>
+    <tr><td>&lt;td&gt;</td><td>데이터 셀</td></tr>
+	</tbody>
+</table>
+
+
+
 </body>
 </html>
