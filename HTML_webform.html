@@ -71,6 +71,170 @@
     </figure>
   </article>
 
+  <hr>
+
+  <article>
+    <h3 title="웹 페이지에서 사용자 입력을 받는 폼">웹 폼</h3>
+    <ul><strong>&lt;form&gt;태그 속성</strong>
+      <li>name : 폼의 이름을 지정하는 속성으로 자바스크립트에서 사용</li>
+      <li>action : 폼 데이터를 처리할 웹 서버 응용프로그램 지정. submit버튼이 클릭되면 action에 지정된 웹 서버 응용프로그램을 실행한다.</li>
+      <li>method : 폼 데이터를 웹 서버로 전송하는 방식. 대표적으로 GET, POST가 있다.
+    </ul>
+
+    <strong>간단한 로그인 폼 만들기</strong>
+    <form name="fo" method="get">
+    사용자 ID : <input type="text" size="15" value=""><br>
+    비밀 번호 : <input type="password" size="15" value="">
+    <input type="submit" value="완료">
+    </form>
+  </article>
+
+  <hr>
+
+  <article>
+    <h3>다양한 폼 만들기</h3>
+    <img src="C:\Users\ADMIN\Documents\GitHub\Web_Study\media\Form_list.png"
+         width="500" height="360">
+
+    <details>
+      <summary>텍스트 입력</summary>
+      <small>placeholder 속성으로 입력할 형식을 제시할 수 있다.</small>
+      <form>
+        &lt;input type="text"&gt; : <input type="text" placeholder="placeholder사용"><br>
+        &lt;input type="password"&gt; : <input type="password" value="" maxlength="4"><br>
+        &lt;textarea&gt; : <textarea cols="20" rows="3">cols="열 개수" rows="행 개수"</textarea>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>데이터 목록을 가진 텍스트 입력 창</summary>
+      <small>&lt;input&gt;태그의 list속성 값과 &lt;datalist&gt;의
+      id속성 값을 동일하게 주어 연결한다.</small>
+      <form>
+        &lt;input type="text"&gt; : <input type="text" list="datalist">
+  			<datalist id="datalist">
+  				<option value="<option value=&quot;&quot;>">
+  				<option value="Miku">
+  				<option value="Rin">
+  			</datalist>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>버튼 만들기</summary>
+      <small>버튼은 &lt;input&gt;태그나 &lt;button&gt;태그로 만들 수 있으며,
+        type속성으로 기능을 선택할 수 있다.</small><br>
+      <ul><strong>버튼 기능의 종류</strong>
+        <li>button : 아무 기능이 없는 버튼. 자바스크립트에서 사용</li>
+        <li>submit : 클릭 시, 웹 서버로 폼 데이터를 전송</li>
+        <li>reset : 폼에 입력된 내용을 초기화</li>
+        <li>image : 이미지 버튼 만들기</li>
+      </ul>
+      <form>
+        <input type="button" value="<input type=&quot;button&quot;>">
+        <button type="button">&lt;button type="button"&gt;</button>
+        <br>
+        <button type="summit">summit</button><br>
+        <input type="text" value="reset?"><input type="reset" value="reset">
+      </form>
+    </details><br>
+
+    <details>
+      <summary>선택형 입력</summary><br>
+      <strong>-체크박스 만들기</strong><br>
+      <small>checked속성을 가진 체크박스는 처음부터 선택된 상태로 출력</small>
+      <form>
+        <input type="checkbox" value="1">&lt;input type="checkbox"&gt;
+        <input type="checkbox" value="2" checked>Miku
+        <input type="checkbox" value="3">Rin
+      </form><br>
+      <strong>-라디오버튼 만들기</strong><br>
+      <small>같은 name을 가진 라디오 버튼 중 하나만 선택 가능</small>
+      <form>
+        <input type="radio" name="vocaloid" value="1">Miku<br>
+        <input type="radio" name="vocaloid" value="2">Rin<br>
+        <input type="radio" name="vocaloid" value="3">IA<br>
+      </form><br>
+      <strong>-콤보박스 만들기</strong><br>
+      <small>&lt;option&gt;태그로 항목을 만들어 드롭다운 리스트에 목록 출력</small>
+      <form>
+        &lt;select name="vocaloid"&gt; : <select name="vocaloid">
+          <option value="1">Miku</option>
+          <option value="2">Rin</option>
+          <option value="3">IA</option>
+        </select>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>&lt;LABEL&gt;로 캡션 만들기</summary>
+      &lt;label&gt;을 사용해 캡션과 폼 요소를 한 단위로 묶을 수 있다.<br>
+      <small>아래 라디오버튼의 캡션부분을 클릭해 비교해본다</small>
+      <form>
+        <input type="radio" name="label" value="1">label 미지정<br>
+        <label>
+          <input type="radio" name="label" value="2">label 지정
+        </label>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>시간 정보 입력</summary>
+      <img src="C:\Users\ADMIN\Documents\GitHub\Web_Study\media\form_timetype.png"
+           width="500" height="150">
+      <form>
+        month :	<input type="month" value=""><br>
+        week : 	<input type="week" value="2016-W36"><br>
+        data : 	<input type="date" value="2016-09-01"><br>
+        time : 	<input type="time" value="21:30"><br>
+        local:	<input type="datetime-local" value=""><br>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>편리한 숫자 입력</summary><br>
+      <strong>-스핀버튼으로 정교한 값 입력</strong><br>
+      <small>&lt;input type="number"&gt;의 속성 min과 max사이에서 step만큼 증감</small>
+      <form>
+        <input type="number" min="0.0" max="10.0" step="1.0">
+      </form><br>
+      <strong>-슬라이드바로 대략적인 값 입력</strong><br>
+      <small>datalist를 id로 연결해 슬라이드바의 지점 생성 가능</small>
+      <form>
+        <input type="range" min="0" max="100" list="slidebar">
+        <datalist id="slidebar">
+        	<option value="10" label="Low">
+        	<option value="50" label="Medium">
+        	<option value="90" label="High">
+        </datalist>
+      </form>
+    </details><br>
+
+    <details>
+      <summary>형식을 가진 텍스트 입력</summary>
+      <small>email, url, 전화번호 등 특정 형식의 텍스트가 입력되었는지 검사</small><br>
+      <form>
+        이메일 : <input type="email" placeholder="email@domain.com"><br>
+        URL : <input type="url" placeholder="https://"><br>
+        전화번호 : <input type="tel" placeholder="010-1234-5678">
+        <input type="submit" value="submit"><br>
+        <hr>
+        검색어 : <input type="search" placeholder="x 클릭시 입력취소">
+      </form>
+    </details><br>
+
+    <details>
+      <summary>폼 요소들의 그룹핌</summary>
+      <small>&lt;fieldset&gt;태그로 그룹핑. 그룹의 제목은 &lt;legend&gt;태그로 표현</small>
+      <form>
+        <fieldset>
+          <legend>회원정보</legend>
+          이메일:<input type="email"><br>
+          url:<input type="url"><br>
+        </fieldset>
+      </form>
+    </details>
+  </article>
 
 </section>
 
