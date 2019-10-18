@@ -10,6 +10,35 @@
     dd > small {color:dodgerblue;}
     dt small {color:dodgerblue;}
     li:hover {color:gray;}
+
+    div.box {
+    	background : yellow;
+    	border-style : solid;
+     	border-color : peru;
+
+    	margin : 40px;
+    	border-width : 30px;
+    	padding : 20px;
+    }
+
+    p.border {
+      border-width:3px; /*thin, medium, thick으로도 지정가능*/
+      border-style:dotted;
+      border-color:blue;
+    }
+    p.border_vertical {
+      border-left-width : 3px; 	/* 테두리 왼쪽 두께 3픽셀 */
+    	border-left-style : dotted; 	/* 테두리 왼쪽 선 점선 */
+    	border-left-color : blue; 	/* 테두리 왼쪽 선 색 blue */
+      border-right-width : 3px; 	/* 테두리 오른쪾 두께 3픽셀 */
+    	border-right-style : dotted; 	/* 테두리 오른쪽 선 점선 */
+    	border-right-color : blue; 	/* 테두리 오른쪽 선 색 blue */
+    }
+    p.border_short {
+      text-indent:1em;
+      border:3px dotted blue;
+    }
+
   </style>
 </head>
 <body>
@@ -201,9 +230,46 @@
 
     <hr>
 
-    
+    <article>
+      <h3>박스 모델</h3>
+      CSS3는 HTML의 태그 요소를 사각형 박스로 다룬다.<br><br>
+      <table border="0">
+        <caption style="font-size:large;font-weight:bold;">박스의 구성</caption>
+        <tbody>
+          <tr><td rowspan="4"><img src="media\box_model.png" width="150" height="200"></td><td><b>콘텐츠</b> : HTML태그의 텍스트나 이미지 부분</td></tr>
+          <tr><td><b>패딩</b> : 콘텐츠를 직접 둘러싸고 있는 내부 여백</td></tr>
+          <tr><td><b>테두리</b> : 패딩 외부의 외곽선으로 직선이나 점선 혹은 이미지로 입힐 수 있음</td></tr>
+          <tr><td><b>여백</b> : 박스의 맨 바깥 영역, 테두리 바깥 공간으로 인접한 아래위 태그의 박스와의 거리</td></tr>
+        </tbody>
+      </table><br>
 
+      <h4>-박스의 크기 제어</h4>
+      width, height, margin, padding등의 프로퍼티로 박스 크기를 지정<br>
+      <div class="box">
+    		<span>DIVDIVDIV</span>
+    	</div>
 
+      <h4>-테두리 꾸미기</h4>
+        <h5 style="text-indent:1em;">테두리의 두께와 모양과 색</h5>
+        테두리는 패딩이나 여백과 달리 두께(width), 모양(style), 색(color)을 지정하는 프로퍼티를 가지고 있다.<br>
+        <p class="border">박스 모델 테두리</p>
+        <p class="border_vertical">수직 테두리만 지정</p>
+      <h4 style="font-style:italic;">-단축 프로퍼티, border</h4>
+      <p title="border의 width, style, color를 순서대로 지정" class="border_short">border:width style blue;</p>
+
+      <details>
+        <summary style="color:red; font-weight:bold;">고급 테두리 꾸미기</h4></summary><br>
+        <h4>둥근 모서리 테두리</h4>
+        <p style="border:3px solid green; border-radius:50px;">border-radius:50px;</p>
+        <p class="border" style="border-radius:0px 20px 40px 60px;">
+          border-radius:0px 20px 40px 60px -> 왼쪽 위부터 시계방향 적용</p>
+        <h4>이미지 테두리</h4>
+        border-image 프로퍼티를 사용해 테두리에 이미지를 입힐 수 있다.
+        <pre>구현요망</pre>
+      </details>
+    </article>
+
+    <hr>
 
 
 </body>
